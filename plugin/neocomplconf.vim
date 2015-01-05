@@ -17,7 +17,7 @@
 " Jeff Ou       cqojf@163.com           2014/12/13
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-if !has('lua')
+if !(has('lua') && (v:version > 703 || v:version == 703 && has('patch885')))
 	" --- Shougo/neocomplcache.vim start.
 	" @see https://github.com/Shougo/neocomplcache.vim
 	" Disable AutoComplPop.
