@@ -170,7 +170,7 @@ function! s:GtagsCscope()
     " Load gtags-cscope.
     "
     set csprg=gtags-cscope
-    let s:command = "cs add " . gtagsroot . "/.GTAGS"
+    let s:command = "cs add " . gtagsroot . "/GTAGS"
     let s:option = ''
     if g:GtagsCscope_Ignore_Case == 1
         let s:option = s:option . 'C'
@@ -266,7 +266,7 @@ function! s:GtagsCscope()
     endif
 endfunction
 
-if g:GtagsCscope_Auto_Load == 1 && filereadable(getcwd() . "/.GTAGS")
+if g:GtagsCscope_Auto_Load == 1 && filereadable(getcwd() . "/GTAGS")
     call s:GtagsCscope()
 endif
 command! -nargs=0 GtagsCscope call s:GtagsCscope()

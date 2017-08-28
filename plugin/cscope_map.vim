@@ -37,18 +37,18 @@ if has("cscope") && g:cscope_enable == 1
     " if you want the reverse search order.
     set csto=0
 
-	if filereadable("/usr/bin/cscope")
-		set csprg=/usr/bin/cscope
-	elseif filereadable("/usr/local/bin/cscope")
+	if filereadable("/usr/local/bin/cscope")
 		set csprg=/usr/local/bin/cscope
+	elseif filereadable("/usr/bin/cscope")
+		set csprg=/usr/bin/cscope
 	endif
 
 	set cst
 	set nocsverb
 
     " add any cscope database in current directory
-    if filereadable("./.vimproj/cscope.out")
-        cs add ./.vimproj/cscope.out
+    if filereadable("cscope.out")
+        cs add cscope.out
     " else add the database pointed to by environment variable
     elseif $CSCOPE_DB != ""
         cs add $CSCOPE_DB
